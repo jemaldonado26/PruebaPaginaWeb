@@ -26,19 +26,20 @@ function t(key) {
   return (TRANSLATIONS[lang] && TRANSLATIONS[lang][key]) || key;
 }
 
-function setLang(lang) {
-  window.currentLang = lang;
-  // translate text nodes with data-i18n attribute
-  document.querySelectorAll('[data-i18n]').forEach(el=>{
-    const key = el.dataset.i18n;
-    if(el.tagName === 'INPUT' || el.tagName === 'TEXTAREA'){
-      el.placeholder = t(key);
-    } else {
-      el.innerText = t(key);
-    }
+function setLanguage(lang) {
+  // Guarda el idioma seleccionado en el almacenamiento local
+  localStorage.setItem("lang", lang);
+
+  // Actualiza todos los textos
+  document.querySelectorAll("[data-i18n]").forEach(el => {
+    const key = el.getAttribute("data-i18n");
+    el.textContent = translations[lang][key] || key;
   });
-  // update active button style
-  document.querySelectorAll('.lang-btn').forEach(b=>b.classList.toggle('active', b.dataset.lang===lang));
+
+  // Cambia la clase activa en los botones
+  document.querySelectorAll(".lang-btn").forEach(btn => {
+    btn.classList.toggle("active", btn.dataset.lang === lang);
+  });
 }
 
 /* Simple form configuration: change action from config */
