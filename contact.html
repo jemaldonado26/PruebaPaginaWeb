@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Contact - Ecologix Solutions</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+<header class="main-header reveal">
+  <div class="logo-nav">
+    <img src="img/Logo2.png" alt="Ecologix Solutions" class="logo">
+    <h1 class="site-title">Ecologix Solutions</h1>
+  </div>
+  <nav>
+    <a href="index.html" data-i18n="menu_home">Home</a>
+    <a href="about.html" data-i18n="menu_about">About Us</a>
+    <a href="projects.html" data-i18n="menu_projects">Projects</a>
+    <a href="gallery.html" data-i18n="menu_gallery">Gallery</a>
+    <a href="team.html" data-i18n="menu_team">Team</a>
+    <a href="contact.html" data-i18n="menu_contact">Contact</a>
+  </nav>
+  <div id="lang-select" class="lang-select"></div>
+</header>
+
+<main>
+  <section class="content reveal">
+    <h2 data-i18n="contact_title">Contact Us</h2>
+
+    <div class="contact-grid">
+      <div class="contact-info">
+        <h3>Information</h3>
+        <p>Email: <span id="corp-email">contact@ecologixsolutions.ca</span></p>
+        <p>Phone: +1 (555) 123-4567</p>
+        <div class="social">
+          <a href="#" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+        </div>
+      </div>
+
+      <div class="contact-form-wrapper">
+        <form id="contact-form" method="POST">
+          <input type="text" id="name" name="name" data-i18n="contact_placeholder_name" placeholder="Your name" required>
+          <input type="email" id="email" name="email" data-i18n="contact_placeholder_email" placeholder="Your email" required>
+          <input type="text" id="subject" name="subject" data-i18n="contact_placeholder_subject" placeholder="Subject" required>
+          <textarea id="message" name="message" rows="6" data-i18n="contact_placeholder_message" placeholder="Write your message..." required></textarea>
+          <button type="submit" data-i18n="contact_send">Send message</button>
+        </form>
+      </div>
+    </div>
+
+  </section>
+</main>
+
+<footer class="site-footer reveal">
+  <div class="social">
+    <a href="#" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+    <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+    <a href="#" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+  </div>
+  <img src="img/Logo3.png" alt="Ecologix Solutions" class="footer-logo">
+  <p data-i18n="footer_rights">© 2025 Ecologix Solutions. All rights reserved.</p>
+</footer>
+
+<script>
+/* Load config to set email/form endpoint when you configure later */
+fetch('js/config.json').then(r=>r.json()).then(cfg=>{
+  const el = document.getElementById('corp-email');
+  if(el) el.innerText = cfg.corporateEmail || el.innerText;
+  const form = document.getElementById('contact-form');
+  if(form && cfg.formEndpoint) form.action = cfg.formEndpoint;
+});
+</script>
+<script src="js/scripts.js"></script>
+</body>
+</html>

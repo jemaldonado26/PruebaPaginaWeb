@@ -1,0 +1,10 @@
+{
+  "defaultLang": "en",
+  "enabledLangs": [
+    "en",
+    "fr",
+    "es"
+  ],
+  "formEndpoint": "",
+  "corporateEmail": "contact@ecologixsolutions.ca"
+}
