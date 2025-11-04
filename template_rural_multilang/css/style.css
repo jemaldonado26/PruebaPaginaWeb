@@ -87,20 +87,19 @@ nav a:hover{background:rgba(255,255,255,0.08)}
 
 .social {
   display: flex;
-  gap: 10px;
   justify-content: center;
   align-items: center;
+  gap: 12px;
   flex-wrap: wrap;
 }
 
-.social img {
-  width: 36px;
-  height: 36px;
-  object-fit: contain;
-  transition: transform 0.3s ease;
-  filter: brightness(0) invert(1); /* Si tus íconos son oscuros, los aclara en fondo oscuro */
+.social a {
+  color: var(--white);
+  font-size: 24px;
+  transition: transform 0.3s ease, color 0.3s ease;
 }
 
-.social img:hover {
+.social a:hover {
   transform: scale(1.2);
+  color: var(--wood);
 }
