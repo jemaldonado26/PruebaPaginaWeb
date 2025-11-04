@@ -26,7 +26,7 @@ body{
 }
 
 .logo-nav{display:flex;align-items:center;gap:12px}
-.logo{width:64px;height:64px;border-radius:8px;object-fit:cover}
+.logo{width:80px;height:80px;border-radius:8px;object-fit:cover}
 nav{display:flex;gap:12px;align-items:center}
 nav a{color:var(--white);text-decoration:none;font-weight:600;padding:6px 8px;border-radius:6px}
 nav a:hover{background:rgba(255,255,255,0.08)}
