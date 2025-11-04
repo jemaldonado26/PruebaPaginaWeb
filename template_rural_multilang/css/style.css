@@ -84,3 +84,23 @@ nav a:hover{background:rgba(255,255,255,0.08)}
   .gallery img{width:100%}
   .main-header{padding:12px}
 }
+
+.social {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.social img {
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+  filter: brightness(0) invert(1); /* Si tus íconos son oscuros, los aclara en fondo oscuro */
+}
+
+.social img:hover {
+  transform: scale(1.2);
+}
