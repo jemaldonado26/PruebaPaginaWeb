@@ -87,3 +87,9 @@ async function initApp(){
 }
 
 document.addEventListener('DOMContentLoaded', initApp);
+
+document.addEventListener("DOMContentLoaded", () => {
+  // Revisa si hay un idioma guardado en el almacenamiento local
+  const savedLang = localStorage.getItem("lang") || "en"; // "es" es el idioma por defecto
+  setLanguage(savedLang);
+});
